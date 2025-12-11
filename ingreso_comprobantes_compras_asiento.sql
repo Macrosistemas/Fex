@@ -1,6 +1,3 @@
-USE [pruebasfex]
-GO
-
 ALTER TABLE [dbo].[ingreso_comprobantes_compras_asiento] DROP CONSTRAINT [FK_IdCabecera_asiento]
 GO
 

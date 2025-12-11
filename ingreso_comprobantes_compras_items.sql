@@ -1,8 +1,3 @@
-USE [pruebasfex]
-GO
-
-ALTER TABLE [dbo].[ingreso_comprobantes_compras_items] DROP CONSTRAINT [FK_IdCabecera]
-GO
 
 /****** Object:  Table [dbo].[ingreso_comprobantes_compras_items]    Script Date: 07/10/2025 8:44:21 ******/
 DROP TABLE [dbo].[ingreso_comprobantes_compras_items]

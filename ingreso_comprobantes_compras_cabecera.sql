@@ -1,5 +1,3 @@
-USE [pruebasfex]
-GO
 
 /****** Object:  Table [dbo].[ingreso_comprobantes_compras_cabecera]    Script Date: 07/10/2025 8:44:17 ******/
 DROP TABLE [dbo].[ingreso_comprobantes_compras_cabecera]

@@ -1,10 +1,3 @@
-USE [pruebasfex]
-GO
-/****** Object:  StoredProcedure [dbo].[sp_inserta_movi_stock]    Script Date: 07/10/2025 8:49:34 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 
 
 ALTER PROCEDURE [dbo].[sp_inserta_movi_stock](

@@ -44,6 +44,6 @@ INSERT INTO [dbo].[ingreso_comprobantes_compras_asiento] (
     errores_importacion, CODIGO_OBJETO_COSTO
 )
 VALUES
-(@idCabecera, '500101', 121000.00, 0.00, 'Compra de mercaderías', 'Factura A 0001-000012345', 1, 1, 0, 10, NULL, 100),
+(@idCabecera, '500101', 121000.00, 0.00, 'Compra de mercaderï¿½as', 'Factura A 0001-000012345', 1, 1, 0, 10, NULL, 100),
 (@idCabecera, '200201', 0.00, 121000.00, 'Proveedores a pagar', 'Factura A 0001-000012345', 1, 1, 0, 10, NULL, 100);
 
