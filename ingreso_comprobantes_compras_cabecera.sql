@@ -13,6 +13,7 @@ GO
 SET ANSI_PADDING ON
 GO
 
+
 CREATE TABLE [dbo].[ingreso_comprobantes_compras_cabecera](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[codigo] [numeric](4, 0) NOT NULL,
@@ -51,15 +52,16 @@ CREATE TABLE [dbo].[ingreso_comprobantes_compras_cabecera](
 	[errores_importacion] [varchar](5000) NULL,
 	[estado_stock] [char](1) NULL,
 	[deposito] [numeric](8, 0) NULL,
+	[tipo_impuesto] [numeric](2, 0) NULL,
+	[tipo_no_grabado] [numeric](2, 0) NULL,
+	[tipo_impresion] [char](1) NULL,
+	[regimen_ganancias] [numeric](8, 0) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
 
-SET ANSI_PADDING OFF
-GO
 
 

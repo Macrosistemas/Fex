@@ -12,7 +12,6 @@ GO
 
 SET ANSI_PADDING ON
 GO
-
 CREATE TABLE [dbo].[ingreso_comprobantes_compras_items](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[id_cabecera] [int] NOT NULL,
@@ -30,15 +29,19 @@ CREATE TABLE [dbo].[ingreso_comprobantes_compras_items](
 	[fecha_hora_procesado_macrogest] [datetime] NULL,
 	[errores_importacion] [varchar](5000) NULL,
 	[SERIE] [char](50) NULL,
+	[codigo_vinc] [numeric](4, 0) NULL,
+	[letra_vinc] [char](3) NULL,
+	[sucursal_vinc] [numeric](5, 0) NULL,
+	[numero_vinc] [numeric](8, 0) NULL,
+	[orden_vinc] [numeric](4, 0) NULL,
+	[vencimiento_serie] [datetime] NULL,
+	[renglon_vinc] [numeric](4, 0) NULL,
+	[deposito] [numeric](8, 0) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
-
-GO
-
-SET ANSI_PADDING OFF
 GO
 
 ALTER TABLE [dbo].[ingreso_comprobantes_compras_items]  WITH CHECK ADD  CONSTRAINT [FK_IdCabecera] FOREIGN KEY([id_cabecera])
