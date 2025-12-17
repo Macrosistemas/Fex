@@ -18,7 +18,7 @@ IF dbo.f_existe('ingreso_comprobantes_compras_items.deposito') = 'N' BEGIN
     ALTER TABLE dbo.ingreso_comprobantes_compras_items ADD deposito numeric(8,0) null 
 END;
 
-IF dbo.f_existe('ingreso_comprobantes_compras_cabecera.tipo_impresion') = 'N' BEGIN 
+IF dbo.f_existe('ingreso_comprobantes_compras_cabecera.tipo_impresion') = 'S' BEGIN 
     ALTER TABLE dbo.ingreso_comprobantes_compras_cabecera alter column tipo_impresion char(1) null 
 END;
 
