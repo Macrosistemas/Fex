@@ -58,7 +58,7 @@ END;
 
 IF dbo.f_existe('ingreso_comprobantes_compras_items.deposito') = 'N' BEGIN 
     ALTER TABLE dbo.ingreso_comprobantes_compras_items ADD deposito numeric(8,0) null 
-    
+END;
 
 IF dbo.f_existe('compras1.subtotal') = 'S' BEGIN 
     ALTER TABLE compras1 ALTER COLUMN subtotal NUMERIC(20,2) NULL
