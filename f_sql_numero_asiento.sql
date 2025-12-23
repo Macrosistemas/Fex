@@ -4,7 +4,7 @@ CREATE FUNCTION dbo.f_sql_numero_asiento (
     @fecha DATE,
     @conta CHAR(1),          -- 'S' o 'N', resultado de f_evento('contabil')
     @nonumero CHAR(1),       -- 'S', 'N' o NULL, resultado de f_evento('conmindes')
-    @contalin BIT            -- gb_contalin, para activar inserts, pero se ignora en esta versión
+    @contalin BIT            -- gb_contalin, para activar inserts, pero se ignora en esta versiï¿½n
 )
 RETURNS INT
 AS
@@ -20,7 +20,7 @@ BEGIN
         @uso INT,
         @periodo CHAR(1)
 
-    -- Obtener tipo de numeración
+    -- Obtener tipo de numeraciï¿½n
     SELECT @tipo = tipo_numeracion_diario 
     FROM co_empresa 
     WHERE empresa = @empresa
@@ -37,7 +37,7 @@ BEGIN
             FROM co_empresa
             WHERE empresa = @empresa
 
-            -- Determinar período
+            -- Determinar perï¿½odo
             IF @nonumero = 'S' OR (@fecha >= @feci AND @fecha <= @fecf)
                 SET @periodo = 'N'
             ELSE IF @fecha <= @fece
@@ -45,7 +45,7 @@ BEGIN
             ELSE
                 SET @periodo = 'P'
 
-            -- Obtener números actuales
+            -- Obtener nï¿½meros actuales
             SELECT @nro_normal = numero_normal, @nro_extensivo = numero_extensivo
             FROM co_punmov
             WHERE empresa = @empresa AND sucursal = @sucursal
@@ -58,9 +58,9 @@ BEGIN
             ELSE IF @periodo = 'E'
                 SET @asiento = @nro_extensivo + 1
             ELSE
-                SET @asiento = 999999 -- sin configuración extensiva
+                SET @asiento = 999999 -- sin configuraciï¿½n extensiva
 
-            -- Validar que no esté usado
+            -- Validar que no estï¿½ usado
             WHILE EXISTS (
                 SELECT 1 FROM co_uso_nro 
                 WHERE numero = @asiento AND tipo = @periodo
@@ -80,7 +80,7 @@ BEGIN
                 FROM co_empresa
                 WHERE empresa = @empresa
 
-                -- Determinar período
+                -- Determinar perï¿½odo
                 IF @nonumero = 'S' OR (@fecha >= @feci AND @fecha <= @fecf)
                     SET @periodo = 'N'
                 ELSE IF @fecha <= @fece
