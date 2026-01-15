@@ -88,19 +88,30 @@ BEGIN
         --END AS ctrl_fecha_proceso_compras2,
 
 
-        CASE 
-            WHEN EXISTS (
-                SELECT 1
-                FROM compras_ib cib
-                WHERE cib.codigo   = i.codigo
-                AND cib.letra    = i.letra
-                AND cib.sucursal = i.sucursal
-                AND cib.numero   = i.numero
-                AND CAST(cib.fecha_contable AS date) = CAST(c.fecha_contable AS date)
-            )
-            THEN 'ok'
-            ELSE 'error'
-        END AS ctrl_fecha_contable_compras_ib,
+       CASE
+    WHEN NOT EXISTS (
+        SELECT 1
+        FROM compras_ib cib
+        WHERE cib.codigo   = i.codigo
+          AND cib.letra    = i.letra
+          AND cib.sucursal = i.sucursal
+          AND cib.numero   = i.numero
+    )
+    THEN 'no controla'
+
+    WHEN EXISTS (
+        SELECT 1
+        FROM compras_ib cib
+        WHERE cib.codigo   = i.codigo
+          AND cib.letra    = i.letra
+          AND cib.sucursal = i.sucursal
+          AND cib.numero   = i.numero
+          AND CAST(cib.fecha_contable AS date) = CAST(c.fecha_contable AS date)
+    )
+    THEN 'ok'
+
+    ELSE 'error'
+END AS ctrl_fecha_contable_compras_ib,
 
         CASE 
             WHEN EXISTS (
