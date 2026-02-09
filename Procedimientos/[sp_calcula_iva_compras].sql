@@ -1,5 +1,5 @@
 CREATE PROCEDURE dbo.sp_calcula_iva_compras
-    @id_cabecera INT,
+    @id_cabecera VARCHAR(100),
 
     @neto21     DECIMAL(18,2) OUTPUT,
     @iva21      DECIMAL(18,2) OUTPUT,
