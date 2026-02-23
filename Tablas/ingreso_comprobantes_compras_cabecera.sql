@@ -1,19 +1,4 @@
 
-/****** Object:  Table [dbo].[ingreso_comprobantes_compras_cabecera]    Script Date: 07/10/2025 8:44:17 ******/
-DROP TABLE [dbo].[ingreso_comprobantes_compras_cabecera]
-GO
-
-/****** Object:  Table [dbo].[ingreso_comprobantes_compras_cabecera]    Script Date: 07/10/2025 8:44:17 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-SET ANSI_PADDING ON
-GO
-
-
 CREATE TABLE [dbo].[ingreso_comprobantes_compras_cabecera](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[codigo] [numeric](4, 0) NOT NULL,

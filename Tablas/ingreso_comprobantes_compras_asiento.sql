@@ -1,20 +1,3 @@
-ALTER TABLE [dbo].[ingreso_comprobantes_compras_asiento] DROP CONSTRAINT [FK_IdCabecera_asiento]
-GO
-
-/****** Object:  Table [dbo].[ingreso_comprobantes_compras_asiento]    Script Date: 07/10/2025 8:44:07 ******/
-DROP TABLE [dbo].[ingreso_comprobantes_compras_asiento]
-GO
-
-/****** Object:  Table [dbo].[ingreso_comprobantes_compras_asiento]    Script Date: 07/10/2025 8:44:07 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-SET ANSI_PADDING ON
-GO
-
 CREATE TABLE [dbo].[ingreso_comprobantes_compras_asiento](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[id_cabecera] [int] NOT NULL,

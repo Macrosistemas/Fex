@@ -1,17 +1,3 @@
-USE [msgestion01]
-GO
-
-/****** Object:  StoredProcedure [dbo].[sp_valida_comprobante_compra]    Script Date: 04/02/2026 9:32:48 ******/
-DROP PROCEDURE [dbo].[sp_valida_comprobante_compra]
-GO
-
-/****** Object:  StoredProcedure [dbo].[sp_valida_comprobante_compra]    Script Date: 04/02/2026 9:32:48 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 CREATE  PROCEDURE [dbo].[sp_valida_comprobante_compra]
 (
     @codigo            INT,
