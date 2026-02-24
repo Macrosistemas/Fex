@@ -23,16 +23,20 @@
 
     DECLARE @idCabecera INT = SCOPE_IDENTITY();
 
-    -- Insertar en ITEMS
-    INSERT INTO [dbo].[ingreso_comprobantes_compras_items] (
-        id_cabecera, codigo_articulo, denominacion_articulo, cantidad, precio,
-        porc_descuento, alicuota_iva, concepto_gravado, importe_iva,
-        concep_no_gravado, obra, fecha_hora_ingreso, fecha_hora_procesado_macrogest,
-        errores_importacion, SERIE
-    )
-    VALUES
-    (@idCabecera, 1001, 'Tornillos galvanizados 1/2"', 100, 1000.0000, 0, 21.00, 100000, 21000, 0, NULL, GETDATE(), NULL, NULL, 'SER-0001'),
-    (@idCabecera, 1002, 'Arandelas acero inoxidable', 50, 200.0000, 0, 21.00, 10000, 2100, 0, NULL, GETDATE(), NULL, NULL, 'SER-0002');
+   
+   -- Insertar en ITEMS
+INSERT INTO [dbo].[ingreso_comprobantes_compras_items] (
+    id_cabecera,    codigo_articulo,    denominacion_articulo,    cantidad,    precio,    porc_descuento,    alicuota_iva,    concepto_gravado,    importe_iva,
+    concep_no_gravado,    obra,    fecha_hora_ingreso,    fecha_hora_procesado_macrogest,    errores_importacion,    SERIE,    codigo_vinc,    letra_vinc,
+    sucursal_vinc,    numero_vinc,    orden_vinc,    renglon_vinc,    deposito)
+VALUES
+(
+    @idCabecera,    1001,    'Tornillos galvanizados 1/2"',    100,    1000.0000,    0,    21.00,    100000,    21000,    0,
+    NULL,    GETDATE(),    NULL,    NULL,    'SER-0001',    7,    'X',    88,    12345,    0,    1,    0),
+(
+    @idCabecera,    1002,    'Arandelas acero inoxidable',    50,    200.0000,    0,    21.00,    10000,    2100,    0,    
+	NULL,    GETDATE(),    NULL,    NULL,    'SER-0002',    7,    'X',    88,    12345,    0,    2,    0);
+
 
     -- Insertar en ASIENTO
     INSERT INTO [dbo].[ingreso_comprobantes_compras_asiento] (
@@ -45,10 +49,15 @@
     (@idCabecera, '200201', 0.00, 121000.00, 'Proveedores a pagar', 'Factura A 0001-000012345', 1, 1, 0, 10, NULL, 100);
 
     -- Insertar en IB
-    INSERT INTO [dbo].[ingreso_comprobantes_compras_ib] (
-        id_cabecera, provincia, importe_ib, importe_perc_ib, participacion
-    )
-    VALUES
-    (@idCabecera, 'CBA', 500.00, 50.00, 100.00),
-    (@idCabecera, 'SFE', 300.00, 30.00, 60.00);
+
+
+INSERT INTO [dbo].[ingreso_comprobantes_compras_ib]
+           (id_cabecera       
+           ,provincia
+           ,importe_ib
+           ,importe_perc_ib
+           ,participacion)
+     VALUES
+           (@idCabecera,'B',12000,1200,2)
+
 

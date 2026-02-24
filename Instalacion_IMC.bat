@@ -14,6 +14,7 @@ sqlcmd -S %SQLSERVER% -d %SQLBASE% -U %SQLUSER% -P %SQLPASS% -i "Tablas\ingreso_
 sqlcmd -S %SQLSERVER% -d %SQLBASE% -U %SQLUSER% -P %SQLPASS% -i "Tablas\ingreso_comprobantes_compras_ib.sql"
 sqlcmd -S %SQLSERVER% -d %SQLBASE% -U %SQLUSER% -P %SQLPASS% -i "Tablas\ingreso_comprobantes_codigos_equvalentes.sql"
 sqlcmd -S %SQLSERVER% -d %SQLBASE% -U %SQLUSER% -P %SQLPASS% -i "Tablas\script_control.sql"
+sqlcmd -S %SQLSERVER% -d %SQLBASE% -U %SQLUSER% -P %SQLPASS% -i "Tablas\VERSION.sql"
 
 
 REM 3. Crear Funciones
