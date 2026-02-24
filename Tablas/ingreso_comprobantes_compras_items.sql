@@ -1,7 +1,7 @@
 
 CREATE TABLE [dbo].[ingreso_comprobantes_compras_items](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[id_cabecera] [int] NOT NULL,
+	[id_cabecera] [varchar](100) NOT NULL,
 	[codigo_articulo] [numeric](8, 0) NOT NULL,
 	[denominacion_articulo] [varchar](160) NOT NULL,
 	[cantidad] [numeric](16, 4) NOT NULL,

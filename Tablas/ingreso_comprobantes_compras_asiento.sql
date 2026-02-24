@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[ingreso_comprobantes_compras_asiento](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[id_cabecera] [int] NOT NULL,
+	[id_cabecera] [varchar](100) NOT NULL,
 	[cuenta_contable] [varchar](12) NULL,
 	[importe_debe] [numeric](18, 2) NULL,
 	[importe_haber] [numeric](18, 2) NULL,
