@@ -1,0 +1,1 @@
+OSQL -S bases20 -U am -P dl -i c:\arc.res\ActualizaFEX.sql -o C:\arc.res\ActualizaFEX.txt -n 
