@@ -1,4 +1,5 @@
-create or alter function dbo.f_sql_trae_codigo_cc
+
+create  function [dbo].[f_sql_trae_codigo_cc]
 (
     @codigo numeric(8,0),
     @sistema_origen numeric(8,0),
@@ -16,7 +17,3 @@ as
 
     return @codigoRtn
 end;
-
-go
-
-select dbo.f_sql_trae_codigo_cc(2,7,2) as CodigoCC;

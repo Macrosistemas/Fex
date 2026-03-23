@@ -1,3 +1,4 @@
+
 CREATE  PROCEDURE [dbo].[sp_valida_comprobante_compra]
 (
     @codigo            INT,
@@ -16,7 +17,7 @@ BEGIN
     SET NOCOUNT ON;
 
     ------------------------------------------------------------
-    -- Grupo de código
+    -- Grupo de cÃ³digo
     ------------------------------------------------------------
     DECLARE @grupo_codigo INT;
 
@@ -91,6 +92,3 @@ BEGIN
     ------------------------------------------------------------
     SET @orden = 0;
 END
-
-GO
-

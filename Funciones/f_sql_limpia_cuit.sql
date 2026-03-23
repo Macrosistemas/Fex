@@ -1,4 +1,5 @@
-create function dbo.f_sql_limpia_cuit(
+
+create function [dbo].[f_sql_limpia_cuit](
 @cuit varchar(15)
 )
 returns varchar(15)
@@ -11,4 +12,3 @@ begin
 
 	return @cuitRtn
 end 
-go

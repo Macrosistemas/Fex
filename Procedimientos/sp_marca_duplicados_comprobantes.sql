@@ -1,10 +1,11 @@
+
 -- =============================================
 -- Procedimiento: sp_marca_duplicados_comprobantes
 -- Descripción: Detecta y marca registros duplicados en ingreso_comprobantes_compras_cabecera
 --              basándose en la combinación de codigo, letra, sucursal, numero, cuit
 --              Mantiene un registro válido (el de menor id) y marca los demás como 'duplicado'
 -- =============================================
-CREATE OR ALTER PROCEDURE sp_marca_duplicados_comprobantes
+CREATE  PROCEDURE [dbo].[sp_marca_duplicados_comprobantes]
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -76,4 +77,3 @@ BEGIN
         RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
     END CATCH
 END;
-GO

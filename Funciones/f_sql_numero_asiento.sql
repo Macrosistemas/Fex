@@ -1,10 +1,11 @@
-CREATE FUNCTION dbo.f_sql_numero_asiento (
+
+CREATE FUNCTION [dbo].[f_sql_numero_asiento] (
     @empresa INT,
     @sucursal INT,
     @fecha DATE,
     @conta CHAR(1),          -- 'S' o 'N', resultado de f_evento('contabil')
     @nonumero CHAR(1),       -- 'S', 'N' o NULL, resultado de f_evento('conmindes')
-    @contalin BIT            -- gb_contalin, para activar inserts, pero se ignora en esta versi�n
+    @contalin BIT            -- gb_contalin, para activar inserts, pero se ignora en esta versiï¿½n
 )
 RETURNS INT
 AS
@@ -20,7 +21,7 @@ BEGIN
         @uso INT,
         @periodo CHAR(1)
 
-    -- Obtener tipo de numeraci�n
+    -- Obtener tipo de numeraciï¿½n
     SELECT @tipo = tipo_numeracion_diario 
     FROM co_empresa 
     WHERE empresa = @empresa
@@ -37,7 +38,7 @@ BEGIN
             FROM co_empresa
             WHERE empresa = @empresa
 
-            -- Determinar per�odo
+            -- Determinar perï¿½odo
             IF @nonumero = 'S' OR (@fecha >= @feci AND @fecha <= @fecf)
                 SET @periodo = 'N'
             ELSE IF @fecha <= @fece
@@ -45,7 +46,7 @@ BEGIN
             ELSE
                 SET @periodo = 'P'
 
-            -- Obtener n�meros actuales
+            -- Obtener nï¿½meros actuales
             SELECT @nro_normal = numero_normal, @nro_extensivo = numero_extensivo
             FROM co_punmov
             WHERE empresa = @empresa AND sucursal = @sucursal
@@ -58,9 +59,9 @@ BEGIN
             ELSE IF @periodo = 'E'
                 SET @asiento = @nro_extensivo + 1
             ELSE
-                SET @asiento = 999999 -- sin configuraci�n extensiva
+                SET @asiento = 999999 -- sin configuraciï¿½n extensiva
 
-            -- Validar que no est� usado
+            -- Validar que no estï¿½ usado
             WHILE EXISTS (
                 SELECT 1 FROM co_uso_nro 
                 WHERE numero = @asiento AND tipo = @periodo
@@ -80,7 +81,7 @@ BEGIN
                 FROM co_empresa
                 WHERE empresa = @empresa
 
-                -- Determinar per�odo
+                -- Determinar perï¿½odo
                 IF @nonumero = 'S' OR (@fecha >= @feci AND @fecha <= @fecf)
                     SET @periodo = 'N'
                 ELSE IF @fecha <= @fece

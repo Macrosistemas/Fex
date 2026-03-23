@@ -1,4 +1,5 @@
-create function dbo.f_setea_sector_fex( 
+
+create function [dbo].[f_setea_sector_fex]( 
 @cuentaContable varchar(12),
 @sector numeric(8,0))
 returns numeric(8,0)

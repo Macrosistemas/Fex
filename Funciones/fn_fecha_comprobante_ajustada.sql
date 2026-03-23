@@ -1,4 +1,4 @@
-CREATE OR ALTER  FUNCTION [dbo].[fn_fecha_comprobante_ajustada]
+CREATE   FUNCTION [dbo].[fn_fecha_comprobante_ajustada]
 (
     @fecha_comprobante DATETIME
 )

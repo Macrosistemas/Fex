@@ -1,4 +1,5 @@
-create function dbo.f_sql_comprobante_existente(
+
+create function [dbo].[f_sql_comprobante_existente](
 @codigo numeric(4,0),
 @letra varchar(4),
 @sucursal numeric(4,0),

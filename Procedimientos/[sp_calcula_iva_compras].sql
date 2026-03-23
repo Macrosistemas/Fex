@@ -1,4 +1,5 @@
-CREATE PROCEDURE dbo.sp_calcula_iva_compras
+
+CREATE PROCEDURE [dbo].[sp_calcula_iva_compras]
     @id_cabecera VARCHAR(100),
 
     @neto21     DECIMAL(18,2) OUTPUT,
@@ -32,4 +33,3 @@ BEGIN
     SET @neto27  = ISNULL(@neto27, 0);
     SET @iva27   = ISNULL(@iva27, 0);
 END
-GO
